@@ -7,6 +7,8 @@ public class Car extends Vehicle implements Payment {
 		setHourlyFee(7.0);
 	}
 
+	public Car() {}
+
 	@Override
 	public double calculatePayment() {
 		if (getDuration() <= 1.0) {
@@ -24,6 +26,6 @@ public class Car extends Vehicle implements Payment {
 	}
 
 	public String toString() {
-	return (super.toString() + "\nTOTAL COST: "+ calculatePayment());
+		return (super.toString() + "\nTOTAL COST: " + calculatePayment());
 	}
 }

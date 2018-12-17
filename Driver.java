@@ -1,13 +1,11 @@
 
 public class Driver {
-	private Vehicle vehicle;
 	private String fullname;
 	private String phoneNumber;
 
 	public Driver(String fullname, String phoneNumber) {
 		this.fullname = fullname;
 		this.phoneNumber = phoneNumber;
-		
 	}
 
 	public String getFullname() {
@@ -20,7 +18,7 @@ public class Driver {
 
 	@Override
 	public String toString() {
-		return "Driver fullname=" + fullname + ", phoneNumber=" + phoneNumber ;
+		return "Driver fullname=" + fullname + ", phoneNumber=" + phoneNumber;
 	}
-	
+
 }

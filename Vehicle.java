@@ -5,15 +5,13 @@ public abstract class Vehicle {
 	private double paymentCost;
 	private double hourlyFee;
 	private double duration;
-
-	public Vehicle(){
-
-	}
-
+	
 	public Vehicle(String plate, Driver driver) {
 		this.plate = plate;
 		this.driver = driver;
 	}
+	
+	public Vehicle() {}
 
 	public String getPlate() {
 		return plate;

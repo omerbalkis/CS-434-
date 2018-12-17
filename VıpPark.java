@@ -34,10 +34,6 @@ public class VıpPark {
 		return this.status;
 	}
 
-	public ArrayList<Vehicle> getVehicles() {
-		return this.vehicles;
-	}
-	
 	public void addVehicle(Vehicle vehicle) {
 		if (vehicles.contains(vehicle)) {
 			throw new IllegalArgumentException("You have already parked your vehicle hear.");
@@ -56,6 +52,34 @@ public class VıpPark {
 		} else {
 			throw new IllegalArgumentException("There is no such a vehicle in this parking space.");
 		}
+	}
+
+	public void initializeFullwithMotorcycle() {
+		System.out.println("VıpPark " + this.location + " is for motorcycles only");
+		for (int i = 0; i < this.capacity; i++) {
+			addVehicle(new Motorcycle());
+		}
+	}
+
+	public void initializeFullwithCar() {
+		System.out.println("VıpPark " + this.location + " is for cars only");
+		for (int i = 0; i < this.capacity; i++) {
+			addVehicle(new Car());
+		}
+	}
+
+	public void initializeFullwithLargeVehicle() {
+		System.out.println("VıpPark " + this.location + " is for large vehicles only");
+		for (int i = 0; i < this.capacity; i++) {
+			addVehicle(new LargeVehicle());
+		}
+	}
+
+	public boolean isFull() {
+		if (this.capacity == this.occupancy) {
+			return true;
+		}
+		return false;
 	}
 
 	public String toString() {
@@ -78,7 +102,10 @@ public class VıpPark {
 	public String viewVehicleList(ArrayList<Vehicle> v) {
 		String list = "";
 		for (int i = 0; i < v.size(); i++) {
-			list += (v.get(i).getPlate() + "\n ");
+			if (isFull())
+				list += (v.get(i).getClass().getName() + " ");
+			else
+				list += (v.get(i).getPlate() + ", ");
 		}
 		return list;
 	}
@@ -102,9 +129,9 @@ public class VıpPark {
 			this.status = status;
 			return this;
 		}
-		
+
 		public Builder withVehicles(ArrayList<Vehicle> vehicles) {
-			for(int i = 0; i < vehicles.size(); i++) {
+			for (int i = 0; i < vehicles.size(); i++) {
 				this.vehicles.add(vehicles.get(i));
 			}
 			return this;

@@ -6,6 +6,8 @@ public class Motorcycle extends Vehicle implements Payment {
 		setDuration(duration);
 		setHourlyFee(5.0);
 	}
+	
+	public Motorcycle() {}
 
 	@Override
 	public double calculatePayment() {
@@ -22,6 +24,7 @@ public class Motorcycle extends Vehicle implements Payment {
 		}
 		return getPaymentCost();
 	}
+	
 	public String toString() {
 		return (super.toString() + "\nTOTAL COST: "+ calculatePayment());
 	}
