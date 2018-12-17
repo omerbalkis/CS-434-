@@ -3,17 +3,15 @@ public class Driver {
 	private Vehicle vehicle;
 	private String fullname;
 	private String phoneNumber;
-	private Location location;
-	
-	public Driver(String fullname, String phoneNumber, Vehicle vehicle, Location location){
+
+	public Driver(String fullname, String phoneNumber, Vehicle vehicle) {
 		this.fullname = fullname;
 		this.phoneNumber = phoneNumber;
-		this.vehicle = vehicle;
-		this.location = location;
+		
 	}
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
+	public Vehicle getVehicle() {
+		return vehicle;
 	}
 
 	public String getFullname() {
@@ -24,22 +22,13 @@ public class Driver {
 		return phoneNumber;
 	}
 
-	public Vehicle getVehicle() {
-		return vehicle;
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
 	}
 
-	public double calculateTotalPayment(){
-		return this.getVehicle().getPaymentCost();
+	@Override
+	public String toString() {
+		return "Driver [vehicle=" + vehicle.getClass().getName() + ", fullname=" + fullname + ", phoneNumber=" + phoneNumber + "]";
 	}
-
-	public Location getLocation(){
-		return this.location;
-	}
-
-	public String toString(){
-		return this.getFullname()  + " has parked his/her "+this.getVehicle().getModel()+" to "
-				+this.getLocation()+". And total fee is: "+this.calculateTotalPayment()+"$";
-	}
+	
 }
-
-

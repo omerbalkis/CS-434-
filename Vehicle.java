@@ -1,13 +1,14 @@
 
 public abstract class Vehicle {
 	private String plate;
-	private double hours;
-	private double hourlyFee;
+	private Driver driver;
 	private double paymentCost;
-	
-	public Vehicle(String plate, double hours) {
+	private double hourlyFee;
+	private double duration;
+
+	public Vehicle(String plate, Driver driver) {
 		this.plate = plate;
-		this.hours = hours;
+		this.driver = driver;
 	}
 
 	public String getPlate() {
@@ -18,20 +19,13 @@ public abstract class Vehicle {
 		this.plate = plate;
 	}
 
-	public double getHours() {
-		return hours;
+	public Driver getDriver() {
+		return driver;
 	}
 
-	public void setHours(double hours) {
-		this.hours = hours;
-	}
-	
-	public double getHourlyFee() {
-		return hourlyFee;
-	}
-
-	public void setHourlyFee(double hourlyFee) {
-		this.hourlyFee = hourlyFee;
+	public void setDriver(Driver driver) {
+		this.driver = driver;
+		driver.setVehicle(this);
 	}
 
 	public double getPaymentCost() {
@@ -42,6 +36,26 @@ public abstract class Vehicle {
 		this.paymentCost = paymentCost;
 	}
 
-	public String getModel() { return this.getModel();}
+	public double getDuration() {
+		return duration;
+	}
+
+	public void setDuration(double duration) {
+		this.duration = duration;
+	}
+
+	public double getHourlyFee() {
+		return hourlyFee;
+	}
+
+	public void setHourlyFee(double hourlyFee) {
+		this.hourlyFee = hourlyFee;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [plate=" + plate + ", driver=" + driver + ", paymentCost=" + paymentCost + ", hourlyFee="
+				+ hourlyFee + ", duration=" + duration + "]";
+	}
 
 }

@@ -1,21 +1,20 @@
 
 public class LargeVehicle extends Vehicle implements Payment {
-	
-	public LargeVehicle(String plate, double hours) {
-		super(plate,hours);
-		setHourlyFee(12.0);
-		calculatePayment(hours);			
+
+	public LargeVehicle(String plate, Driver driver, double duration) {
+		super(plate, driver);
+		if (duration < 24.0) {
+			setDuration(duration);
+		} else {
+			throw new IllegalArgumentException("Large Vehicles can not park more than one day in VıpPark");
+		}
+		setHourlyFee(10.0);
 	}
 
 	@Override
-	public double calculatePayment(double hours) {
-		setPaymentCost(hours * getHourlyFee());
+	public double calculatePayment() {
+		setPaymentCost(getDuration() * getHourlyFee());
 		return getPaymentCost();
 	}
 
-	@Override
-	public String getModel(){
-		return "large vehicle";
-	}
-	
 }
