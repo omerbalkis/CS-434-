@@ -6,6 +6,10 @@ public abstract class Vehicle {
 	private double hourlyFee;
 	private double duration;
 
+	public Vehicle(){
+
+	}
+
 	public Vehicle(String plate, Driver driver) {
 		this.plate = plate;
 		this.driver = driver;
@@ -25,7 +29,6 @@ public abstract class Vehicle {
 
 	public void setDriver(Driver driver) {
 		this.driver = driver;
-		driver.setVehicle(this);
 	}
 
 	public double getPaymentCost() {
@@ -54,7 +57,7 @@ public abstract class Vehicle {
 
 	@Override
 	public String toString() {
-		return "Vehicle [plate=" + plate + ", driver=" + driver + ", paymentCost=" + paymentCost + ", hourlyFee="
+		return "Vehicle [plate=" + plate + ", driver=" + driver + ", hourlyFee="
 				+ hourlyFee + ", duration=" + duration + "]";
 	}
 

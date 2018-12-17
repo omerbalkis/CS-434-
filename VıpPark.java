@@ -64,7 +64,7 @@ public class VıpPark {
 				.append("\nAvaible Space : ").append(capacity - occupancy);
 
 		if (status != null) {
-			sb.append("\nColor : ").append(status);
+			sb.append("\nStatus : ").append(status);
 		}
 		if (capacity != 0) {
 			sb.append("\nCapacity : ").append(capacity);
@@ -78,7 +78,7 @@ public class VıpPark {
 	public String viewVehicleList(ArrayList<Vehicle> v) {
 		String list = "";
 		for (int i = 0; i < v.size(); i++) {
-			list += (v.get(i).getClass().getName() + " ");
+			list += (v.get(i).getPlate() + "\n ");
 		}
 		return list;
 	}

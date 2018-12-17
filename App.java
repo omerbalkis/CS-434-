@@ -1,57 +1,39 @@
 
 public class App {
 	public static void main(String[] args) {
-		VıpPark ortakoy = new VıpPark.Builder(Location.Ortakoy, 50).withStatus(Status.Indoor).build();
-		
-//		Driver alara = new Driver("Alara Baransel", "05303208911");
-//		Vehicle bmw = new Car("34 yb 7530", alara, Location.Ortakoy, 4.0);
-//		alara.setVehicle(bmw);
-//		
-//		
-//		System.out.println(alara.toString());
-//		
-//		
-//		//System.out.println(bmw.toString());
-//		
-//		ortakoy.addVehicle(bmw);
-//		
-//		//System.out.println(ortakoy.toString());
-		
-//		Driver omer = new Driver("Omer Balkis", "05347415754");
-//		Vehicle audi = new Car("34 ob 1907", omer, 24.0);
-//		omer.setVehicle(audi);
-//		ortakoy.addVehicle(audi);
-//		
-		
-		
-		
+		VıpPark ortakoy = new VıpPark.Builder(Location.Ortakoy, 10).withStatus(Status.Indoor).build();
+		VıpPark atasehir = new VıpPark.Builder(Location.Atasehir, 20).withStatus(Status.Outdoor).build();
+		VıpPark besiktas = new VıpPark.Builder(Location.Besiktas, 50).withStatus(Status.Indoor).build();
+		VıpPark kadikoy = new VıpPark.Builder(Location.Kadikoy, 20).withStatus(Status.Outdoor).build();
+		VıpPark cekmekoy  = new VıpPark.Builder(Location.Cekmekoy, 20).withStatus(Status.Indoor).build();
 
-//	Vehicle bmw = new Car("34 NOM 07",4);
-//	System.out.println(bmw.getPaymentCost());
-//
-//	Vehicle jeep = new LargeVehicle("23323",4);
-//	System.out.println(jeep.getPaymentCost());
-//
-//	Driver omer = new Driver("Omer Balkis","05347415754",jeep,Location.Kadikoy);
-//	System.out.println(omer);
-//
-//	Driver murat = new Driver("Murat","05359663000",bmw,Location.Atasehir);
-//	System.out.println(murat);
-//
-//	omer.setVehicle(bmw);
-//	System.out.println(omer);
-//
-//	Driver alara = new Driver("Alara Baransel","1111111111",
-//	new Motorcycle("34 RR 043",6),Location.Cekmekoy);
-//	System.out.println(alara);
-//
-//	VıpPark.Builder ortakoyP = new VıpPark.Builder(Location.Ortakoy,50);
-//	ortakoyP.withVehicle(bmw);
-//	ortakoyP.withVehicle(jeep);
-//	VıpPark ortakoyPark = ortakoyP.build();
-//	System.out.println(ortakoyPark);
-//	ortakoyP.removeVehicle(bmw);
-//	System.out.println(ortakoyP.build());
+		Driver onurhan = new Driver("Onurhan Turfanda", "05393662646");
+		Driver omer = new Driver("Omer Balkis","05347415754");
+		Driver alara = new Driver("Alara Baransel","05303208911");
+		Driver atakan = new Driver("Atakan Çokgünlü","05349701006");
+		Driver murat = new Driver("Murat Balkis	","05359663000");
+
+		Vehicle bmw = new Car("34 BLK 97",omer,6.8);
+		Vehicle range = new LargeVehicle("34 KRL 98",alara,12);
+		Vehicle alfa = new Car("34 MERSIN 07",atakan,1.2);
+		Vehicle kurye = new Motorcycle("34 KURYE",onurhan,5);
+		Vehicle pejo = new Car("34 NOM 07",murat,9);
+
+		for (int i = 0; i < 10; i++){
+			ortakoy.addVehicle(new Car("34 ii 5"+i,omer,5));
+		}
+
+		for (int i = 0; i < 10; i++){
+			atasehir.addVehicle(new Car("34 ATA 54",alara,6));
+		}
+
+		System.out.println(ortakoy);
+
+
+
+
+
+
 
 	}
 }

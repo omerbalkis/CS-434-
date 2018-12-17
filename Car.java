@@ -22,5 +22,8 @@ public class Car extends Vehicle implements Payment {
 		}
 		return getPaymentCost();
 	}
-	
+
+	public String toString() {
+	return (super.toString() + "\nTOTAL COST: "+ calculatePayment());
+	}
 }
