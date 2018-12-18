@@ -1,3 +1,4 @@
+package Model;
 
 public abstract class Vehicle {
 	private String plate;

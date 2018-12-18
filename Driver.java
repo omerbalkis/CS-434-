@@ -1,3 +1,4 @@
+package Model;
 
 public class Driver {
 	private String fullname;

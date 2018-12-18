@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.ArrayList;
 
 public class VıpPark {
@@ -94,18 +96,19 @@ public class VıpPark {
 			sb.append("\nCapacity : ").append(capacity);
 		}
 		if (vehicles != null) {
-			sb.append("\nVehicles : ").append(viewVehicleList(vehicles));
+			sb.append("\nVehicles : ").append(viewVehicleList(vehicles)).append("\n");
 		}
 		return sb.toString();
 	}
 
 	public String viewVehicleList(ArrayList<Vehicle> v) {
 		String list = "";
-		for (int i = 0; i < v.size(); i++) {
-			if (isFull())
-				list += (v.get(i).getClass().getName() + " ");
-			else
+		if (isFull()) {
+			list += ("Otopark is full");
+		} else {
+			for (int i = 0; i < v.size(); i++) {
 				list += (v.get(i).getPlate() + ", ");
+			}
 		}
 		return list;
 	}

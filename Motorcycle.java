@@ -1,3 +1,4 @@
+package Model;
 
 public class Motorcycle extends Vehicle implements Payment {
 
