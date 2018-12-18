@@ -3,6 +3,8 @@ package GUI;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.SplittableRandom;
+import java.util.StringTokenizer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,7 +25,6 @@ public class DriverLogin {
 	
 	
 	public DriverLogin() {
-		//new Driver(fullName,phoneNumber);
 
 		login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		login.setSize(600, 600);
@@ -48,7 +49,19 @@ public class DriverLogin {
 		button.addActionListener(new loginHandler());
 
 		login.setVisible(true);
+		System.out.println(driverParser("Omer Balkis-05347415754").getFullname());
+		System.out.println(driverParser("Omer Balkis-05347415754").getPhoneNumber());
+	}
 
+	public Driver driverParser(String str){
+		StringTokenizer st = new StringTokenizer(str, "-");
+		String name = "";
+		String phoneNumber = "";
+		while (st.hasMoreElements()) {
+			name = st.nextToken();
+			phoneNumber = st.nextToken();
+		}
+		return new Driver(name,phoneNumber);
 	}
 
 	class loginHandler implements ActionListener {

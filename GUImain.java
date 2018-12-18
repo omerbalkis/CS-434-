@@ -17,8 +17,7 @@ public class GUImain {
 		
 		Driver alara = new Driver("Alara Baransel", "05303208911");
 		DriverLogin view = new DriverLogin();
-		
-		
+
 
 	}
 	
