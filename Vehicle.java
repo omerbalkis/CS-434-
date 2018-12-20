@@ -57,7 +57,8 @@ public abstract class Vehicle implements Element {
 
 	@Override
 	public String toString() {
-		return "[plate=" + plate + ", driver=" + driver + ", hourlyFee=" + hourlyFee + ", duration=" + duration + "]";
+		return "[plate=" + plate + ", driver=" + driver.getFullname() + ", hourlyFee=" + hourlyFee + ", duration="
+				+ duration + "]";
 	}
 
 }

@@ -13,6 +13,7 @@ public class LargeVehicle extends Vehicle implements Payment {
 	}
 
 	public LargeVehicle() {
+		setHourlyFee(10.0);
 	}
 
 	@Override

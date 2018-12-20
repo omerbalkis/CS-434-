@@ -9,6 +9,7 @@ public class Car extends Vehicle implements Payment {
 	}
 
 	public Car() {
+		setHourlyFee(7.0);
 	}
 
 	@Override

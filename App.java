@@ -42,22 +42,40 @@ public class App {
 		}
 
 		vehicles.clear();
+		
+
+		VıpPark cekmekoy = new VıpPark.Builder(Location.Cekmekoy, 20).withStatus(Status.Indoor).build();
 
 		Driver sema = new Driver("Sema Baransel", "05055813757");
 		Driver akif = new Driver("Akif Baransel", "05322876944");
 		Driver buse = new Driver("Buse Cehreli", "05545044014");
 		Driver beste = new Driver("Beste Cehreli", "05545044015");
 		Driver ismet = new Driver("Ismet Sarı", "05348419445");
-
-		vehicles.add(new Car("34 YB 7530", sema, 6.8));
-		vehicles.add(new LargeVehicle("34 BV 567", akif, 12));
+		
+		Vehicle v1 = cekmekoy.getVehicle("CAR");
+		v1.setPlate("34 YB 7530");
+		v1.setDriver(sema);
+		v1.setDuration(3.0);
+		
+		Vehicle v2 = cekmekoy.getVehicle("Large Vehicle");
+		v2.setPlate("34 LV 9090");
+		v2.setDriver(akif);
+		v2.setDuration(6.0);
+		
+		Vehicle v3 = cekmekoy.getVehicle("Motorcycle");
+		v3.setPlate("34 HD 1998");
+		v3.setDriver(beste);
+		v3.setDuration(12.0);
+		
+		vehicles.add(v1);
+		vehicles.add(v2);
+		vehicles.add(v3);
 		vehicles.add(new Car("34 BS 61", buse, 1.2));
-		vehicles.add(new Motorcycle("34 FS 129", beste, 5));
 		vehicles.add(new Car("34 FB 1907", ismet, 9));
+		
+		cekmekoy = new VıpPark.Builder(Location.Cekmekoy, 20).withStatus(Status.Indoor).withVehicles(vehicles).build();
 
-		VıpPark cekmekoy = new VıpPark.Builder(Location.Cekmekoy, 20).withStatus(Status.Indoor).withVehicles(vehicles)
-				.build();
-
+		
 		System.out.println(cekmekoy);
 		System.out.println("Payment list of vehicles in this park : ");
 		for (Vehicle v : vehicles) {
