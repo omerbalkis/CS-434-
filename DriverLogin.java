@@ -3,6 +3,7 @@ package GUI;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import javax.swing.JButton;
@@ -23,6 +24,10 @@ public class DriverLogin {
 	JPanel buttonPanel = new JPanel();
 	JButton button = new JButton("Login");
 	JTextField driverInfo = new JTextField(30);
+	private Driver driver;
+	public static ArrayList<Driver> drivers = new ArrayList<Driver>();
+	public static ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
+	private Car car;
 
 	public DriverLogin() {
 		login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,41 +42,47 @@ public class DriverLogin {
 		login.add(buttonPanel);
 		login.add(new JPanel());
 		login.add(new JPanel());
-		
+
 		button.addActionListener(new loginHandler());
+		
 
 		login.setVisible(true);
-
 	}
 
+	public Driver driverParser(String str) {
+		str.equals(driverInfo.getText());
+		StringTokenizer st = new StringTokenizer(str, "-");
+		String name = "";
+		String phoneNumber = "";
+		while (st.hasMoreElements()) {
+			name = st.nextToken();
+			phoneNumber = st.nextToken();
+		}
+		return new Driver(name, phoneNumber);
+	}
+
+	public Driver getDriver() {
+		return this.driver;
+	}
+
+	public void setDriver(Driver driver) {
+		this.driver = driver;
+	}
+	
+	public void setCar(Car c) {
+		this.car = c;
+	}
 
 	class loginHandler implements ActionListener {
-		private Driver driver;
-		
+
 		public void actionPerformed(ActionEvent e) {
-			this.setDriver(driverParser(driverInfo.getText()));
-			System.out.println(this.getDriver().toString());
+			setDriver(driverParser(driverInfo.getText()));
+			setCar(new Car("test",getDriver(),4.0));
+			drivers.add(driver);
+			vehicles.add(car);
 
-		}
-		
-		public Driver getDriver() {
-			return driver;
-		}
+			new ParkView();
 
-		public void setDriver(Driver driver) {
-			this.driver = driver;
-		}
-		
-		public Driver driverParser(String str) {
-			str.equals(driverInfo.getText());
-			StringTokenizer st = new StringTokenizer(str, "-");
-			String name = "";
-			String phoneNumber = "";
-			while (st.hasMoreElements()) {
-				name = st.nextToken();
-				phoneNumber = st.nextToken();
-			}
-			return new Driver(name, phoneNumber);
 		}
 
 	}
