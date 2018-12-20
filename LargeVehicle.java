@@ -12,7 +12,13 @@ public class LargeVehicle extends Vehicle implements Payment {
 		setHourlyFee(10.0);
 	}
 
-	public LargeVehicle() {}
+	public LargeVehicle() {
+	}
+
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
 
 	@Override
 	public double calculatePayment() {
@@ -23,4 +29,5 @@ public class LargeVehicle extends Vehicle implements Payment {
 	public String toString() {
 		return (super.toString() + "\nTOTAL COST: " + calculatePayment());
 	}
+
 }

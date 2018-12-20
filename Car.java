@@ -8,7 +8,13 @@ public class Car extends Vehicle implements Payment {
 		setHourlyFee(7.0);
 	}
 
-	public Car() {}
+	public Car() {
+	}
+
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
 
 	@Override
 	public double calculatePayment() {

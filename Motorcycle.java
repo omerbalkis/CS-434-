@@ -9,6 +9,11 @@ public class Motorcycle extends Vehicle implements Payment {
 	}
 	
 	public Motorcycle() {}
+	
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
 
 	@Override
 	public double calculatePayment() {

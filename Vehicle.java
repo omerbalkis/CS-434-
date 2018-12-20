@@ -1,18 +1,19 @@
 package Model;
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Element {
 	private String plate;
 	private Driver driver;
 	private double paymentCost;
 	private double hourlyFee;
 	private double duration;
-	
+
 	public Vehicle(String plate, Driver driver) {
 		this.plate = plate;
 		this.driver = driver;
 	}
-	
-	public Vehicle() {}
+
+	public Vehicle() {
+	}
 
 	public String getPlate() {
 		return plate;
@@ -56,8 +57,7 @@ public abstract class Vehicle {
 
 	@Override
 	public String toString() {
-		return "Vehicle [plate=" + plate + ", driver=" + driver + ", hourlyFee="
-				+ hourlyFee + ", duration=" + duration + "]";
+		return "[plate=" + plate + ", driver=" + driver + ", hourlyFee=" + hourlyFee + ", duration=" + duration + "]";
 	}
 
 }

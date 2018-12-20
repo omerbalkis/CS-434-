@@ -15,7 +15,6 @@ import javax.swing.JTextField;
 import Model.Car;
 import Model.Driver;
 import Model.Vehicle;
-import Model.VıpPark;
 
 public class DriverLogin {
 
@@ -44,7 +43,6 @@ public class DriverLogin {
 		login.add(new JPanel());
 
 		button.addActionListener(new loginHandler());
-		
 
 		login.setVisible(true);
 	}
@@ -68,7 +66,7 @@ public class DriverLogin {
 	public void setDriver(Driver driver) {
 		this.driver = driver;
 	}
-	
+
 	public void setCar(Car c) {
 		this.car = c;
 	}
@@ -77,7 +75,7 @@ public class DriverLogin {
 
 		public void actionPerformed(ActionEvent e) {
 			setDriver(driverParser(driverInfo.getText()));
-			setCar(new Car("test",getDriver(),4.0));
+			setCar(new Car("test", getDriver(), 4.0));
 			drivers.add(driver);
 			vehicles.add(car);
 

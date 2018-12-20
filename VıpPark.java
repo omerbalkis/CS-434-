@@ -35,7 +35,7 @@ public class VıpPark {
 	public Status getStatus() {
 		return this.status;
 	}
-	
+
 	public ArrayList<Vehicle> getVehicles() {
 		return this.vehicles;
 	}
@@ -86,19 +86,6 @@ public class VıpPark {
 	}
 
 	public String toString() {
-		if (this.occupancy == this.capacity) {
-			System.out.println("VıpPark " + this.location + " is full");
-			for (int i = 0; i < vehicles.size(); i++) {
-				if (vehicles.get(i) instanceof Car) {
-					System.out.println("VıpPark " + this.location + " is for cars only");
-				} else if (vehicles.get(i) instanceof Motorcycle) {
-					System.out.println("VıpPark " + this.location + " is for motorcycles only");
-				} else {
-					System.out.println("VıpPark " + this.location + " is for large vehicles only");
-				}
-			}
-		}
-
 		StringBuilder sb = new StringBuilder();
 		sb.append("Location : ").append(location).append("\nOccupancy : ").append(occupancy)
 				.append("\nAvaible Space : ").append(capacity - occupancy);
