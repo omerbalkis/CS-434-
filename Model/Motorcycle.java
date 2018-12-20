@@ -7,9 +7,11 @@ public class Motorcycle extends Vehicle implements Payment {
 		setDuration(duration);
 		setHourlyFee(5.0);
 	}
-	
-	public Motorcycle() {}
-	
+
+	public Motorcycle() {
+		setHourlyFee(5.0);
+	}
+
 	@Override
 	public void accept(Visitor v) {
 		v.visit(this);
@@ -30,9 +32,9 @@ public class Motorcycle extends Vehicle implements Payment {
 		}
 		return getPaymentCost();
 	}
-	
+
 	public String toString() {
-		return (super.toString() + "\nTOTAL COST: "+ calculatePayment());
+		return (super.toString() + "\nTOTAL COST: " + calculatePayment());
 	}
 
 }

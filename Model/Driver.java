@@ -12,11 +12,19 @@ public class Driver {
 	public String getFullname() {
 		return fullname;
 	}
+	
+	public void setFullname(String fullname) {
+		this.fullname = fullname;	
+	}
 
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-
+	
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
 	@Override
 	public String toString() {
 		return "Driver fullname = " + fullname + ", phoneNumber = " + phoneNumber;
