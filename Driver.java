@@ -19,7 +19,7 @@ public class Driver {
 
 	@Override
 	public String toString() {
-		return "Driver fullname=" + fullname + ", phoneNumber=" + phoneNumber;
+		return "Driver fullname = " + fullname + ", phoneNumber = " + phoneNumber;
 	}
 
 }
