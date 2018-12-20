@@ -52,7 +52,9 @@ public class ParkView extends JFrame {
 
 			// creates JButtons for empty parking spots
 			for (int k = 0; k < parks.get(i).getCapacity() - parks.get(i).getOccupancy(); k++) {
-				centerPanel.add(new JLabel("Empty"));
+				JLabel empty = new JLabel("Empty");
+				empty.setBackground(Color.GREEN);
+				centerPanel.add(empty);
 			}
 
 			outerPanel.add(centerPanel, BorderLayout.CENTER);
