@@ -40,23 +40,6 @@ public class VıpPark {
 		return this.vehicles;
 	}
 
-	public Vehicle getVehicle(String vehicleType) {
-		if (vehicleType == null) {
-			return null;
-		}
-		if (vehicleType.equalsIgnoreCase("Car")) {
-			return new Car();
-
-		} else if (vehicleType.equalsIgnoreCase("Motorcycle")) {
-			return new Motorcycle();
-
-		} else if (vehicleType.equalsIgnoreCase("Large Vehicle")) {
-			return new LargeVehicle();
-		}
-
-		return null;
-	}
-
 	public void addVehicle(Vehicle vehicle) {
 		if (vehicles.contains(vehicle)) {
 			throw new IllegalArgumentException("You have already parked your vehicle hear.");
