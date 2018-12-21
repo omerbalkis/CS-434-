@@ -39,18 +39,18 @@ public class ParkView extends JFrame {
 			JPanel centerPanel = new JPanel();
 			centerPanel.setLayout(new GridLayout(5, parks.get(i).getCapacity()));
 
-			// creates JButtons depending on the current park's occupancy
+		
 			for (int j = 0; j < parks.get(i).getOccupancy(); j++) {
 				if (parks.get(i).isFull()) {
 					JLabel full = new JLabel("Full");
 					full.setBackground(Color.RED);
 					centerPanel.add(full);
 				} else {
-					centerPanel.add(new JButton(parks.get(i).getVehicles().get(j).getPlate()));
+					centerPanel.add(new JLabel(parks.get(i).getVehicles().get(j).getPlate()));
 				}
 			}
 
-			// creates JButtons for empty parking spots
+			
 			for (int k = 0; k < parks.get(i).getCapacity() - parks.get(i).getOccupancy(); k++) {
 				JLabel empty = new JLabel("Empty");
 				empty.setBackground(Color.GREEN);
